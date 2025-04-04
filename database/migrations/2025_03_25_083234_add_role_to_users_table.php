@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('role')->default('user');
+            $table->unsignedBigInteger('role_id')->after('password');
             
         });
     }
@@ -22,3 +22,4 @@ return new class extends Migration {
         });
     }
 };
+    
